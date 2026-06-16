@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* LAYOUTS */
+
+.color-header {
+    display: flex;
+    justify-content: space-around;
+    border: solid red 1px;
+    padding: 1em 0;
+}
+
+.grid-colors,
+.grid-hex {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+.grid-colors {
+    height: 70vh;
+    border: solid black 1px;
+}
+
+.grid-hex {
+    padding: 0.5em 0;
+}
+
+/* STYLING */
+
+.input-color {
+    height: 35px;
+    width: 50px;
+}
+
+.select-color {
+
+}
+
+.generate-scheme-btn {
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0.5em 0.5em;
+}
+
+/* TYPOGRAPHY */
+
+.grid-hex {
+    font-size: 0.75rem;
+}
