@@ -10,12 +10,27 @@ const hexThree = document.getElementById("grid-hex-3")
 const hexFour = document.getElementById("grid-hex-4")
 const hexFive = document.getElementById("grid-hex-5")
 
+document.getElementById("generate-scheme-btn").addEventListener("click", e => {
+    generateColorScheme()
+})
 
+function generateColorScheme() {
+    const hexValue = document.getElementById("input-color").value.replace("#", "")
+    const schemeValue = document.getElementById("select-color").value
 
-fetch("https://www.thecolorapi.com/id?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33")
+    fetch(`https://www.thecolorapi.com/scheme?hex=${hexValue}&format=json&mode=${schemeValue}&count=5`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
-        // colorOne.style.backgroundColor = data.rgb.value
-        // hexOne.textContent = data.hex.value
+        colorOne.style.backgroundColor = data.colors[0].hex.value
+        colorTwo.style.backgroundColor = data.colors[1].hex.value
+        colorThree.style.backgroundColor = data.colors[2].hex.value
+        colorFour.style.backgroundColor = data.colors[3].hex.value
+        colorFive.style.backgroundColor = data.colors[4].hex.value
+
+        hexOne.textContent = data.colors[0].hex.value
+        hexTwo.textContent = data.colors[1].hex.value
+        hexThree.textContent = data.colors[2].hex.value
+        hexFour.textContent = data.colors[3].hex.value
+        hexFive.textContent = data.colors[4].hex.value
     })
+}

@@ -14,9 +14,21 @@
 </head>
 <body>
     <header class="color-header">
-        <input type="color" class="input-color">
-        <select class="select-color"></select>
-        <button class="generate-scheme-btn">Get colour scheme</button>
+        <input type="color" class="input-color" id="input-color">
+        <select 
+            class="select-color"
+            id="select-color"
+            size="1"
+        >
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+        </select>
+        <button class="generate-scheme-btn" id="generate-scheme-btn">Get colour scheme</button>
     </header>
 
     <section class="grid-colors">
